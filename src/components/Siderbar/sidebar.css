@@ -1,0 +1,155 @@
+/* Sidebar styles for larger screens */
+.sidebar {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(246, 241, 241);
+    padding: 25px 15px;
+    width: 80px; /* Initial width */
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.sidebar.extended {
+    width: 200px; /* Extended width */
+}
+
+.sidebar img {
+    width: 20px; /* Default logo width */
+}
+
+.sidebar .menu {
+    position: absolute;
+    top: 50px; /* Lower the menu icon position */
+    left: 29px; /* Center the menu icon */
+    cursor: pointer;
+}
+
+.sidebar .new-chat {
+    margin-top: 80px; /* Lower position due to the menu icon's new position */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: rgb(233, 227, 227);
+    border-radius: 50px;
+    color: gray;
+    cursor: pointer;
+}
+
+.sidebar .recent,
+.sidebar .bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .recent-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.sidebar .recent-entry,
+.sidebar .bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    color: rgb(103, 97, 97);
+    cursor: pointer;
+}
+
+.sidebar .recent-entry:hover,
+.sidebar .bottom-item:hover {
+    background-color: rgb(227, 221, 221);
+}
+
+/* Hide sidebar on small devices */
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar.extended {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        padding: 25px 15px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 1000;
+        background-color: rgb(246, 241, 241);
+    }
+
+    .sidebar .new-chat {
+        display: flex;
+    }
+
+    .sidebar .recent,
+    .sidebar .bottom {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+        position: fixed;
+        top: 50px; /* Adjusted for smaller screens */
+        left: 25px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    /* Adjust the logo size for small devices */
+    .sidebar img,
+    .menu {
+        width: 30px; /* Adjust logo width */
+        height: 30px; /* Adjust logo height */
+    }
+}
+
+/* Media query for tablets (iPad Mini and other tablets) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .sidebar {
+        width: 80px;
+        padding: 25px 15px;
+    }
+
+    .sidebar.extended {
+        width: 200px;
+    }
+
+    .menu {
+        display: block;
+        position: absolute;
+        top: 50px; /* Lower the menu icon position */
+        left: 25px;
+        cursor: pointer;
+    }
+
+    .sidebar img,
+    .menu {
+        width: 25px; /* Adjust logo width for tablets */
+        height: 25px; /* Adjust logo height for tablets */
+    }
+
+    .sidebar .new-chat {
+        margin-top: 80px; /* Adjust top margin */
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 15px;
+        background-color: rgb(233, 227, 227);
+        border-radius: 50px;
+        color: gray;
+        cursor: pointer;
+    }
+
+    .sidebar .recent,
+    .sidebar .bottom {
+        display: flex;
+        flex-direction: column;
+    }
+}

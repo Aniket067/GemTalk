@@ -1,0 +1,605 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 15vh;
+    position: relative;
+}
+
+.main .nav {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 20px;
+    color: rgb(148, 135, 135);
+}
+
+.main .nav img {
+    top: 3%;
+    position: absolute;
+    left: 95%;
+    width: 40px;
+    border-radius: 50%;
+}
+
+
+
+
+.underline{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+html,
+body {
+    height: 100%;
+    /* Ensures that the height is set to the full viewport */
+    margin: 0;
+    /* Removes default margin */
+    padding: 0;
+    /* Removes default padding */
+}
+
+.main-container {
+    width: 120%;
+    max-width:80% ;
+    height: 80vh;
+    /* Sets the height of the container to be 100% of the viewport height */
+    margin: auto;
+    /* Centers the container horizontally */
+    display: flex;
+    /* Using flex to manage the internal layout */
+    flex-direction: column;
+    /* Stack children vertically */
+    justify-content: center;
+    /* Center content vertically */
+}
+
+
+.main .greet {
+    margin: 50px 0;
+    font-size: 55px;
+    color: rgb(184, 173, 173);
+    font-weight: 500;
+    padding: 20px;
+}
+
+.main .greet span {
+    background: -webkit-linear-gradient(16deg, #56c4a5, #e67c4f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    margin-bottom: 120px;
+}
+
+.main .cards .card {
+    flex: 1 0 185px;
+    height: 200px;
+    padding: 15px;
+    background-color: rgb(246, 241, 241);
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.main .card img {
+    width: 35px;
+    padding: 5px;
+    position: absolute;
+    background-color: rgb(252, 248, 248);
+    border-radius: 20px;
+    bottom: 10px;
+    right: 10px;
+}
+
+.main .card p {
+    color: rgb(75, 67, 67);
+    font-size: 15px;
+}
+
+.main .card:hover {
+    background-color: rgb(231, 221, 221);
+}
+
+.main-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.search-box {
+    position: absolute;
+    top: -60%;
+    /* Center vertically */
+    left: 36.5%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: rgb(246, 241, 241);
+    padding: 10px 15px;
+    border-radius: 50px;
+    width: 70%;
+    /* margin: 8px auto; */
+}
+
+
+
+.search-box img {
+    width: 24px;
+    cursor: pointer;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.search-box div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Decreased gap */
+}
+
+.main .bottom-info {
+    font-size: 13px;
+    margin: 15px auto;
+    /* text-align: center; */
+    font-weight: 300;
+}
+
+.result {
+    padding: 0 5%;
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar {
+    display: none;
+}
+
+.result-title {
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.result img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.result-data {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.loader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loader hr {
+    border-radius: 4px;
+    border: none;
+    background-color: rgb(228, 219, 219);
+    background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+    background-size: 800px 50px;
+    height: 20px;
+    animation: loader 3s infinite linear;
+}
+
+@keyframes loader {
+    0% {
+        background-position: -800px 0px;
+    }
+
+    100% {
+        background-position: 800px 0px;
+    }
+}
+
+.result-data p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .main-bottom input {
+        width: 150px;
+    }
+
+    .main-bottom img {
+        width: 20px;
+    }
+
+    .search-box {
+        padding: 5px 10px;
+    }
+
+    .search-box div {
+        gap: 5px;
+    }
+}
+
+/* Tablets and Small Laptops (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main-container {
+        width: 90%;
+        padding: 0 30px;
+    }
+
+    .main .greet {
+        font-size: 42px;
+        padding: 20px;
+    }
+
+    .main .cards {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .main .cards .card {
+        height: 180px;
+        padding: 20px;
+    }
+
+    .main .card img {
+        width: 34px;
+        padding: 5px;
+    }
+
+    .search-box {
+        padding: 8px 20px;
+        gap: 15px;
+    }
+
+    .search-box img {
+        width: 26px;
+    }
+
+    .search-box input {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    .search-box div {
+        gap: 15px;
+    }
+
+    .main .bottom-info {
+        font-size: 15px;
+    }
+
+    .result-title {
+        margin: 35px 0;
+        gap: 22px;
+    }
+
+    .result img {
+        width: 40px;
+    }
+
+    .result-data {
+        gap: 22px;
+        font-size: 15px;
+    }
+
+    .result-data p {
+        font-size: 18px;
+    }
+}
+    
+
+/* Large Laptops and Desktops (1366px - 1600px) */
+@media (min-width: 1366px) and (max-width: 1600px) {
+    .main{
+        height: 70vh;
+       
+    }
+    .main-container {
+        width: 83%;
+        padding: 0 50px;
+    }
+
+    .main .greet {
+        font-size: 50px;
+        padding: 30px;
+    }
+
+    .main .cards {
+        gap: 20px;
+        /* Decreased gap */
+        padding: 30px;
+    }
+
+    .main .cards .card {
+        height: 200px;
+        padding: 30px;
+    }
+
+    .main .card img {
+        width: 38px;
+        padding: 7px;
+    }
+
+    .search-box {
+        padding: 12px 25px;
+        /* Decreased padding */
+        gap: 15px;
+        /* Decreased gap */
+    }
+
+    .search-box img {
+        width: 30px;
+    }
+
+    .search-box input {
+        font-size: 17px;
+        padding: 12px;
+    }
+
+    .search-box div {
+        gap: 15px;
+        /* Decreased gap */
+    }
+
+    .main .bottom-info {
+        font-size: 17px;
+    }
+
+    .result-title {
+        margin: 45px 0;
+        gap: 30px;
+    }
+
+    .result img {
+        width: 44px;
+    }
+
+    .result-data {
+        gap: 30px;
+    }
+
+    .result-data p {
+        font-size: 20px;
+    }
+}
+
+/* Extra Large Screens (1600px and above) */
+@media (min-width: 1600px) {
+    .main-container {
+        width: 60%;
+        padding: 0 60px;
+    }
+
+    .main .greet {
+        font-size: 55px;
+        padding: 35px;
+    }
+
+    .main .cards {
+        gap: 30px;
+        /* Decreased gap */
+        padding: 35px;
+    }
+
+    .main .cards .card {
+        height: 210px;
+        padding: 35px;
+    }
+
+    .main .card img {
+        width: 40px;
+        padding: 8px;
+    }
+
+    .search-box {
+        padding: 15px 30px;
+        /* Decreased padding */
+        gap: 15px;
+        /* Decreased gap */
+    }
+
+    .search-box img {
+        width: 32px;
+    }
+
+    .search-box input {
+        font-size: 17px;
+        padding: 15px;
+    }
+
+    .search-box div {
+        gap: 15px;
+        /* Decreased gap */
+    }
+
+    .main .bottom-info {
+        font-size: 18px;
+    }
+
+    .result-title {
+        margin: 50px 0;
+        gap: 35px;
+    }
+
+    .result img {
+        width: 46px;
+    }
+
+    .result-data {
+        gap: 35px;
+    }
+
+    .result-data p {
+        font-size: 21px;
+    }
+}
+
+
+
+
+/* Additional adjustments for other resolutions if necessary */
+@media (min-width: 1600px) {
+    .main {
+        min-height: 100vh;
+        height: 100vh;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .main-container {
+        overflow-y: auto;
+    }
+
+    .main-bottom {
+        position: relative;
+    }
+}
+
+
+/* Mobile devices */
+@media (max-width: 600px) {
+    .main {
+        padding-bottom: 50px;
+      
+    }
+
+
+
+    .main .nav {
+        padding: 15px 10px;
+        font-size: 18px;
+    }
+
+    .main .nav img {
+        left: 90%;
+        top: 10px;
+    }
+
+    .main .greet {
+        font-size: 32px;
+        margin-top: 20px;
+        padding: 10px 0;
+    }
+
+    .main .cards {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .main .cards .card {
+        flex: none;
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+        padding: 10px;
+    }
+
+    .main .card img {
+        width: 30px;
+        bottom: 8px;
+        right: 8px;
+    }
+
+    .main .card p {
+        font-size: 14px;
+    }
+
+
+
+    .search-box img {
+        width: 20px;
+    }
+
+    .search-box input {
+        font-size: 14px;
+    }
+
+    .main-bottom {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 10px 20px;
+        background: white;
+    }
+
+    .main .bottom-info {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .result {
+        padding: 5%;
+    }
+
+    .result-title {
+        margin: 20px 0;
+        gap: 10px;
+        font-size: 22px
+    }
+
+    .result img {
+        width: 30px;
+    }
+
+    .result-data {
+        gap: 10px;
+    }
+
+    .result-data p {
+        font-size: 22px;
+    }
+
+    .main-container {
+        /* Assuming the search box is inside a container element */
+        display: flex;
+        /* Using flexbox to center children */
+        justify-content: center;
+        /* Centers children horizontally in the container */
+        align-items: center;
+        /* Centers children vertically (optional here) */
+        flex-direction: column;
+        /* Stacks children vertically */
+    }
+
+    .search-box {
+        margin: 20px 0;
+        position: absolute;
+        left: 49%;
+    }
+
+
+    .search-box input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}
